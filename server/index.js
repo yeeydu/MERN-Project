@@ -23,7 +23,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 
 // string connection from mongodb
-const CONNECTION_URL = 'mongodb+srv://project:51EzxPjtnQw8tkbz@cluster0.qrgkxuq.mongodb.net/?retryWrites=true&w=majority';
+const CONNECTION_URL = 'mongodb+srv://project:secret@cluster0.qrgkxuq.mongodb.net/?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5500;
 
