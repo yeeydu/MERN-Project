@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
@@ -6,24 +7,24 @@ import studentRoutes from './routes/student.js';
 
 const app = express(); //app is a copy of express
 
-// starts at students - all routes
-app.use('/students', studentRoutes);
-
-
-app.use(bodyParser.json({ limit: "10mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 //const cors = require('cors') 
-
 const corsOptions = { 
   // origin:'https://localhost:3000',
   AccessControlAllowOrigin: '*',  
   origin: '*',  
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE' 
 }
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
+
+// starts at students - all routes
+app.use('/students', studentRoutes);
+
+app.use(bodyParser.json({ limit: "10mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
+
 
 // string connection from mongodb
-const CONNECTION_URL = 'mongodb+srv://project:secret@cluster0.qrgkxuq.mongodb.net/?retryWrites=true&w=majority';
+const CONNECTION_URL = `mongodb+srv://${process.env.PROJECT}:${process.env.SECRET}@cluster0.qrgkxuq.mongodb.net/?retryWrites=true&w=majority`;
 
 const PORT = process.env.PORT || 5500;
 

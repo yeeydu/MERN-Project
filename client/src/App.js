@@ -1,4 +1,4 @@
-import { Container, AppBar, Typography, Grow, Grid, makeStyles } from '@material-ui/core';
+import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import Student from './components/showStudent/ShowStudent';
 import CreateStudent from './components/createStudent/CreateStudent';
 import './App.css';
@@ -18,7 +18,7 @@ function App() {
         </AppBar>
         <Grow in>
           <Container>
-            <Grid container justify="space-between" alignItems='stretch'>
+            <Grid container justifyContent="space-between" alignItems='stretch'>
               <Grid item xs={12} sm={7}>
                 <AppBar className={classes.appBar} position='static' colors='inherit' >
                   <Student />

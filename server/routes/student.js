@@ -1,5 +1,5 @@
 import express  from "express";
-import { getStudents, createStudent } from "../controllers/student.js";
+import { getStudents, createStudent, deleteStudent } from "../controllers/student.js";
 import student from "../models/student.js";
 
 const router = express.Router();
@@ -7,5 +7,6 @@ const router = express.Router();
 // path - callback func
 router.get('/', getStudents);
 router.post('/', createStudent);
+router.delete('/:id', deleteStudent);
 
 export default router;
