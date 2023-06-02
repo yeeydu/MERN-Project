@@ -24,20 +24,22 @@ export default function CreateStudent() {
 
     return (
         <>
-            <h2>Create Student</h2>
+        <div className={classes.form}>
+            <h2 className={classes.createHeading}>Create Student</h2>
             <form className={classes.root} noValidate autoComplete='off'>
-                <TextField id="regNo" label="Registration Nº" variant="outlined" value={student.regNo} onChange={(event) => { setStudent({ ...student, regNo: event.target.value }) }} />
-                <TextField id="name" label="Name" variant="outlined" value={student.name} onChange={(event) => { setStudent({ ...student, name: event.target.value }) }} />
-                <TextField id="grade" label="Grade" variant="outlined" value={student.grade} onChange={(event) => { setStudent({ ...student, grade: event.target.value }) }} />
-                <TextField id="section" label="Section" variant="outlined" value={student.section} onChange={(event) => { setStudent({ ...student, section: event.target.value }) }} />
+                <TextField id="outlined-basic" label="Registration Nº" variant="outlined" value={student.regNo} onChange={(event) => { setStudent({ ...student, regNo: event.target.value }) }} />
+                <TextField id="outlined-basic" label="Name" variant="outlined" value={student.name} onChange={(event) => { setStudent({ ...student, name: event.target.value }) }} />
+                <TextField id="outlined-basic" label="Grade" variant="outlined" value={student.grade} onChange={(event) => { setStudent({ ...student, grade: event.target.value }) }} />
+                <TextField id="outlined-basic" label="Section" variant="outlined" value={student.section} onChange={(event) => { setStudent({ ...student, section: event.target.value }) }} />
             </form>
             <Button variant="contained"
-                onClick={(e) => { 
+                onClick={(event) => { 
                 createStudent()
-                e.preventDefault()
+                event.preventDefault()
                 }}>
                 Create
             </Button>
+        </div>
         </>
     );
 }

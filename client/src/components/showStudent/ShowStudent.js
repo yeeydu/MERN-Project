@@ -16,7 +16,10 @@ export default function ShowStudent() {
 
     const deleteStudent = (id) =>{
         axios.delete(`http://localhost:5500/students/${id}`).then(()=>{
-            window.location.reload(false);
+        setStudentsList(studentsList.filter((val)=>{
+            return val._id !== id;
+        }))    
+        //window.location.reload(false);
         })
     }
 
@@ -27,7 +30,6 @@ export default function ShowStudent() {
             })
     }, [])
 
-    console.log(studentsList);
     return (
         <>
             <h2>All Students</h2>

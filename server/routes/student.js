@@ -4,7 +4,7 @@ import student from "../models/student.js";
 
 const router = express.Router();
 
-// path - callback func
+//      path - callback func from controller
 router.get('/', getStudents);
 router.post('/', createStudent);
 router.delete('/:id', deleteStudent);
