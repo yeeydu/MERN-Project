@@ -1,6 +1,6 @@
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import Student from './components/showStudent/ShowStudent';
-import CreateStudent2 from './components/createStudent/CreateStudent';
+import CreateStudent from './components/createStudent/CreateStudent';
 import './App.css';
 import useStyles from './styles.js';
 
@@ -26,7 +26,7 @@ function App() {
               </Grid>
               <Grid item xs={12} sm={4}>
                 <AppBar className={classes.appBar} position='static'  >
-                  <CreateStudent2 />
+                  <CreateStudent />
                 </AppBar>
               </Grid>
             </Grid>

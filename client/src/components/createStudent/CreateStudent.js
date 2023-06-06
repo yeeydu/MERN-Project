@@ -21,7 +21,7 @@ export default function CreateStudent() {
                 window.location.reload(false);
             })
     }
-
+console.log(student);
     return (
         <>
         <div className={classes.form}>
