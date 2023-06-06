@@ -6,6 +6,7 @@ import cors from 'cors';
 import studentRoutes from './routes/student.js';
 
 const app = express(); //app is a copy of express
+app.use(express.json()) // The express.json() function is a built-in middleware function in Express. It parses incoming requests with JSON payloads and is based on body-parser. 
 
 //const cors = require('cors') 
 const corsOptions = { 

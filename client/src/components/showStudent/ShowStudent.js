@@ -48,11 +48,11 @@ export default function ShowStudent() {
                         {studentsList.map((student, key) => (
                             <TableRow key={key} >
                                 <TableCell component="th">{student.name}</TableCell>
-                                <TableCell align="right">{student.grade}</TableCell>
-                                <TableCell align="right">{student.sction}</TableCell>
-                                <TableCell align="right">{student.regNo}</TableCell>
-                                <TableCell align="right">
-                                    <IconButton aria-label="delete" size="small" onCanPlay={() => deleteStudent(student._id)} >
+                                <TableCell >{student.grade}</TableCell>
+                                <TableCell >{student.section}</TableCell>
+                                <TableCell >{student.regNo}</TableCell>
+                                <TableCell >
+                                    <IconButton aria-label="delete" size="small" onClick={() => deleteStudent(student._id)} >
                                         <DeleteIcon fontSize="inherit" />
                                     </IconButton>
                                 </TableCell>

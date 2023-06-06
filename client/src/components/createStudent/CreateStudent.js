@@ -15,31 +15,33 @@ export default function CreateStudent() {
         section: "",
     });
 
-    const createStudent = () => {
+    const createStudent = (e) => {
+        e.preventDefault();
         axios.post('http://localhost:5500/students', student)
-            .then(() => {
-                window.location.reload(false);
-            })
+        .then(() => {
+            window.location.reload(false);
+        }).catch(function (error) {
+            console.log(error);
+        });
     }
-console.log(student);
+
     return (
         <>
-        <div className={classes.form}>
-            <h2 className={classes.createHeading}>Create Student</h2>
-            <form className={classes.root} noValidate autoComplete='off'>
-                <TextField id="outlined-basic" label="Registration Nº" variant="outlined" value={student.regNo} onChange={(event) => { setStudent({ ...student, regNo: event.target.value }) }} />
-                <TextField id="outlined-basic" label="Name" variant="outlined" value={student.name} onChange={(event) => { setStudent({ ...student, name: event.target.value }) }} />
-                <TextField id="outlined-basic" label="Grade" variant="outlined" value={student.grade} onChange={(event) => { setStudent({ ...student, grade: event.target.value }) }} />
-                <TextField id="outlined-basic" label="Section" variant="outlined" value={student.section} onChange={(event) => { setStudent({ ...student, section: event.target.value }) }} />
-            </form>
-            <Button variant="contained"
-                onClick={(event) => { 
-                createStudent()
-                event.preventDefault()
-                }}>
-                Create
-            </Button>
-        </div>
+            <div className={classes.form}>
+                <h2 className={classes.createHeading}>Create Student</h2>
+                <form className={classes.root} noValidate autoComplete='off'>
+                    <TextField id="outlined-basic" label="Registration Nº" variant="outlined" value={student.regNo} onChange={(e) => { setStudent({ ...student, regNo: e.target.value }) }} />
+                    <TextField id="outlined-basic" label="Name" variant="outlined" value={student.name} onChange={(e) => { setStudent({ ...student, name: e.target.value }) }} />
+                    <TextField id="outlined-basic" label="Grade" variant="outlined" value={student.grade} onChange={(e) => { setStudent({ ...student, grade: e.target.value }) }} />
+                    <TextField id="outlined-basic" label="Section" variant="outlined" value={student.section} onChange={(e) => { setStudent({ ...student, section: e.target.value }) }} />
+                </form>
+                <Button variant="contained"
+                    onClick={(e) => {
+                        createStudent(e)
+                    }}>
+                    Create
+                </Button>
+            </div>
         </>
     );
 }
