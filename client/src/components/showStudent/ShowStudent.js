@@ -14,12 +14,12 @@ export default function ShowStudent() {
 
     const [studentsList, setStudentsList] = useState([]);
 
-    const deleteStudent = (id) =>{
-        axios.delete(`http://localhost:5500/students/${id}`).then(()=>{
-        setStudentsList(studentsList.filter((val)=>{
-            return val._id !== id;
-        }))    
-        //window.location.reload(false);
+    const deleteStudent = (id) => {
+        axios.delete(`http://localhost:5500/students/${id}`).then(() => {
+            setStudentsList(studentsList.filter((val) => {
+                return val._id !== id;
+            }))
+            //window.location.reload(false);
         })
     }
 
