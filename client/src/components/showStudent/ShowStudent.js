@@ -15,7 +15,8 @@ export default function ShowStudent() {
     const [studentsList, setStudentsList] = useState([]);
 
     const deleteStudent = (id) => {
-        axios.delete(`http://localhost:5500/students/${id}`).then(() => {
+        //axios.delete(`http://localhost:5500/students/${id}`).then(() => {
+        axios.delete(`express-mern-project.vercel.app:5500/students/${id}`).then(() => {
             setStudentsList(studentsList.filter((val) => {
                 return val._id !== id;
             }))
@@ -24,7 +25,8 @@ export default function ShowStudent() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:5500/students')
+        //axios.get('http://localhost:5500/students')
+        axios.get('express-mern-project.vercel.app:5500/students') // vercel port
             .then((allStudents) => {
                 setStudentsList(allStudents.data);
             })
