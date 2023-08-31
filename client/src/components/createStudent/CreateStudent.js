@@ -18,7 +18,7 @@ export default function CreateStudent() {
     const createStudent = (e) => {
         e.preventDefault();
         //axios.post('http://localhost:5500/students', student)
-        axios.post('https://express-mern-project.vercel.app:5500/students', student)
+        axios.post('https://express-mern-project.vercel.app/students', student)
         .then(() => {
             window.location.reload(false);
         }).catch(function (error) {
