@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import studentRoutes from './routes/student.js';
+import studentRoutes from '../routes/student.js';
 
 const app = express(); //app is a copy of express
 app.use(express.json()) // The express.json() function is a built-in middleware function in Express. It parses incoming requests with JSON payloads and is based on body-parser. 
